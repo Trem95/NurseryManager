@@ -23,7 +23,7 @@ public class TimesheetMapper implements Mapper<TimesheetDTO, Timesheet> {
         timesheetDTO.setId(timesheet.getId());
         timesheetDTO.setBaby(babyMapper.toDTO(timesheet.getBaby()));
         timesheetDTO.setArrivalTime(timesheet.getArrivalTime());
-        timesheet.setLeaveTime(timesheet.getLeaveTime());
+        timesheetDTO.setLeaveTime(timesheet.getLeaveTime());
 
         return timesheetDTO;
     }
@@ -36,8 +36,8 @@ public class TimesheetMapper implements Mapper<TimesheetDTO, Timesheet> {
 
         timesheet.setId(timesheetDTO.getId());
         timesheet.setBaby(babyMapper.toEntity(timesheetDTO.getBaby()));
-        timesheet.setArrivalTime((Date) timesheetDTO.getArrivalTime());
-        timesheet.setLeaveTime((Date) timesheetDTO.getLeaveTime());
+        timesheet.setArrivalTime(timesheetDTO.getArrivalTime());
+        timesheet.setLeaveTime(timesheetDTO.getLeaveTime());
 
         return timesheet;
     }
