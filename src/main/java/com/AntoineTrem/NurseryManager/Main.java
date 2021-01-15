@@ -11,10 +11,12 @@ import com.AntoineTrem.NurseryManager.Metier.DTO.BabyDTO;
 import com.AntoineTrem.NurseryManager.Metier.DTO.ObservationDTO;
 import com.AntoineTrem.NurseryManager.Metier.Services.BabyService;
 import com.AntoineTrem.NurseryManager.Metier.Services.ObservationService;
+import org.apache.tomcat.jni.Local;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -25,22 +27,11 @@ public class Main {
     public static void main(String[] args) throws ElementAlreadyExistException, ElementNotFoundException {
         ApplicationContext ctx =  SpringApplication.run(NurseryManagerApplication.class, args);
 
-        BabyRepository babyRepo = ctx.getBean(BabyRepository.class);
-        BabyService babyService = ctx.getBean(BabyService.class);
-
-        ObservationRepository obsRepo = ctx.getBean(ObservationRepository.class);
-        ObservationService obsService = ctx.getBean(ObservationService.class);
-
-
-
-        ObservationDTO obs = obsService.getOne(1);
-        List<ObservationDTO> obs1 = obsService.getAllByDate(new Date(2020,1,12));
-
-        for (ObservationDTO observation : obs1) {
-            System.out.println(observation.getId());
-        }
-
-
+//        BabyRepository babyRepo = ctx.getBean(BabyRepository.class);
+//        BabyService babyService = ctx.getBean(BabyService.class);
+//
+       // ObservationRepository obsRepo = ctx.getBean(ObservationRepository.class);
+       // ObservationService obsService = ctx.getBean(ObservationService.class);
 
     }
 }

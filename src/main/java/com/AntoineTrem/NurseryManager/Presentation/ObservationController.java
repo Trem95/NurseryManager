@@ -5,11 +5,13 @@ import com.AntoineTrem.NurseryManager.Exception.NotFoundException.ElementNotFoun
 import com.AntoineTrem.NurseryManager.Metier.DTO.Container.ObservationContainer;
 import com.AntoineTrem.NurseryManager.Metier.DTO.ObservationDTO;
 import com.AntoineTrem.NurseryManager.Metier.Services.ObservationService;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class ObservationController {
 
     public ObservationController(ObservationService service) {this.service = service;}
 
-    @PostMapping
+    @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public void create (@RequestBody ObservationDTO toCreate) throws ElementAlreadyExistException
     {
@@ -48,21 +50,21 @@ public class ObservationController {
         return ResponseEntity.ok(new ObservationContainer(list,list.size()));
     }
 
-    @GetMapping("/date")
-    public ResponseEntity<ObservationContainer> getAllByDate(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")Date date) throws ElementNotFoundException
-    {
-        //TODO EFFACER TEST
-        List<ObservationDTO> list = service.getAllByDate(date);
-        System.out.println("AAAAAAAAAAAAAAAAAAAA");
-        for (ObservationDTO observationDTO :  list) {
-            System.out.println(observationDTO.getObservationDate());
-        }
-        System.out.println("AAAAAAAAAAAAAAAAAAAA");
+//    @GetMapping("/date")
+//    public ResponseEntity<ObservationContainer> getAllByDate(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") Date date) throws ElementNotFoundException
+//    {
+//        List<ObservationDTO> list = service.getAllByDate(date);
+//        return ResponseEntity.ok(new ObservationContainer(list,list.size()));
+//    }
+//
+//    @GetMapping("/date&baby/{babyId}")
+//    public ResponseEntity<ObservationContainer> getAllByDateAndBabyId(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") Date date,@PathVariable int babyId) throws ElementNotFoundException
+//    {
+//        List<ObservationDTO> list = service.getAllByDateAndBabyId(date,babyId);
+//        return ResponseEntity.ok(new ObservationContainer(list,list.size()));
+//    }
 
-        return ResponseEntity.ok(new ObservationContainer(list,list.size()));
-    }
-
-    @PutMapping
+    @PutMapping("/update")
     public ResponseEntity<String> update(@RequestBody ObservationDTO toUpdate) throws ElementNotFoundException
     {
         service.update(toUpdate);

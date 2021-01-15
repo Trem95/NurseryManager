@@ -20,7 +20,7 @@ public class NapController {
 
     public NapController(NapService service){this.service = service;}
 
-    @PostMapping
+    @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody NapDTO toCreate) throws ElementAlreadyExistException
     {
@@ -47,7 +47,7 @@ public class NapController {
         return ResponseEntity.ok(new NapContainer(list, list.size()));
     }
 
-    @PutMapping
+    @PutMapping("/update")
     public ResponseEntity<String> update(@RequestBody NapDTO toUpdate) throws ElementNotFoundException
     {
         service.update(toUpdate);

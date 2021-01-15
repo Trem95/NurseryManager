@@ -19,7 +19,7 @@ public class TimesheetController {
 
     public TimesheetController(TimesheetService service){this.service = service;}
 
-    @PostMapping
+    @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody TimesheetDTO toCreate) throws ElementAlreadyExistException
     {
@@ -46,7 +46,7 @@ public class TimesheetController {
         return ResponseEntity.ok(new TimesheetContainer(list,list.size()));
     }
 
-    @PutMapping
+    @PutMapping("/update")
     public ResponseEntity<String> update(@RequestBody TimesheetDTO toUpdate) throws ElementNotFoundException
     {
         service.update(toUpdate);

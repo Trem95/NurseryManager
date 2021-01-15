@@ -20,7 +20,7 @@ public class BabyController {
 
     public BabyController(BabyService service) {this.service = service;}
 
-    @PostMapping
+    @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody BabyDTO toCreate) throws ElementAlreadyExistException
     {
@@ -40,7 +40,7 @@ public class BabyController {
         return ResponseEntity.ok(service.getOnePres(id));
     }
 
-    @PutMapping
+    @PutMapping("/update")
     public ResponseEntity<String> update(@RequestBody BabyDTO toUpdate) throws ElementNotFoundException
     {
         service.update(toUpdate);

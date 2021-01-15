@@ -19,7 +19,7 @@ public class PaednurseController {
 
     public PaednurseController(PaednurseService service){this.service = service;}
 
-    @PostMapping
+    @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody PaednurseDTO toCreate) throws ElementAlreadyExistException
     {
@@ -39,7 +39,7 @@ public class PaednurseController {
         return ResponseEntity.ok(service.getOne(id));
     }
 
-    @PutMapping
+    @PutMapping("/update")
     public ResponseEntity<String> update(@RequestBody PaednurseDTO toUpdate) throws ElementNotFoundException
     {
         service.update(toUpdate);

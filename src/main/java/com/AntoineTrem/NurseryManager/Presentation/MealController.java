@@ -18,7 +18,7 @@ public class MealController {
 
     public MealController(MealService service){this.service = service;}
 
-    @PostMapping
+    @PostMapping("/create")
     public void create(@RequestBody MealDTO toCreate) throws ElementAlreadyExistException
     {
         service.create(toCreate);
@@ -44,7 +44,7 @@ public class MealController {
         return ResponseEntity.ok( new MealContainer(list, list.size()));
     }
 
-    @PutMapping
+    @PutMapping("/update")
     public ResponseEntity<String> update(@RequestBody MealDTO toUpdate) throws ElementNotFoundException
     {
         service.update(toUpdate);
