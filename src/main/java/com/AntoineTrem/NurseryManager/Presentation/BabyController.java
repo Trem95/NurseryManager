@@ -47,7 +47,7 @@ public class BabyController {
         return ResponseEntity.ok("Update Successful");
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<BabyDTO> delete(@PathVariable int id) throws ElementNotFoundException
     {
         BabyDTO deleted = service.getOne(id);

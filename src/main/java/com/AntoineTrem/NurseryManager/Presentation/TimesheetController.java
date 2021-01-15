@@ -53,7 +53,7 @@ public class TimesheetController {
         return ResponseEntity.ok("Update Successful");
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<TimesheetDTO> delete(@PathVariable int id) throws ElementNotFoundException
     {
         TimesheetDTO deleted = service.getOne(id);

@@ -46,7 +46,7 @@ public class PaednurseController {
         return ResponseEntity.ok("Update Successful");
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<PaednurseDTO> delete(@PathVariable int id) throws ElementNotFoundException
     {
         PaednurseDTO deleted = service.getOne(id);

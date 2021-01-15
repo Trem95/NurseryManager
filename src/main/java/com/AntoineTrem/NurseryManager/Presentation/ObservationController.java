@@ -71,7 +71,7 @@ public class ObservationController {
         return ResponseEntity.ok("Update Successful");
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<ObservationDTO> delete(@PathVariable int id) throws ElementNotFoundException
     {
         ObservationDTO deleted = service.getOne(id);

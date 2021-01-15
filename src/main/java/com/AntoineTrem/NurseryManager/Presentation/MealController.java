@@ -51,7 +51,7 @@ public class MealController {
         return ResponseEntity.ok("Update Successful");
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<MealDTO> delete(@PathVariable int id) throws ElementNotFoundException
     {
         MealDTO deleted = service.getOne(id);

@@ -54,7 +54,7 @@ public class NapController {
         return ResponseEntity.ok("Update Successful");
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<NapDTO> delete(@PathVariable int id) throws ElementNotFoundException
     {
         NapDTO deleted = service.getOne(id);
