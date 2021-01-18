@@ -17,10 +17,16 @@ public class Nap {
     @Column( name ="nap_id", nullable = false)
     private int id;
 
+    @Column( name = "nap_date", nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date napDate;
+
     @Column( name = "nap_time_begin", nullable = false)
+    @Temporal(TemporalType.TIME)
     private Date napTimeBegin;
 
     @Column( name = "nap_time_end", nullable = false)
+    @Temporal(TemporalType.TIME)
     private Date napTimeEnd;
 
     @Column( name ="nap_obs")

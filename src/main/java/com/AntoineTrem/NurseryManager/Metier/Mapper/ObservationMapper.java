@@ -23,6 +23,7 @@ public class ObservationMapper implements Mapper<ObservationDTO, Observation> {
         obsDTO.setObservation(observation.getObservation());
         obsDTO.setObsAuthor(observation.getObsAuthor());
         obsDTO.setObservationDate(observation.getObservationDate());
+        obsDTO.setObservationTime(observation.getObservationTime());
 
         return obsDTO;
     }
@@ -38,6 +39,7 @@ public class ObservationMapper implements Mapper<ObservationDTO, Observation> {
         obs.setObsAuthor(observationDTO.getObsAuthor());
         obs.setObservation(observationDTO.getObservation());
         obs.setObservationDate(observationDTO.getObservationDate());
+        obs.setObservationTime(observationDTO.getObservationTime());
 
         return obs;
     }

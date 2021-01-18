@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/paednurse")
+@CrossOrigin("*")
 public class PaednurseController {
 
     private PaednurseService service;

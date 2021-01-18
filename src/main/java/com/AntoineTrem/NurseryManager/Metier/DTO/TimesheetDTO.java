@@ -6,9 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Past;
 import java.util.Date;
 
 @Getter @Setter
@@ -18,13 +16,15 @@ public class TimesheetDTO {
     private int id;
 
     @NotBlank
-    @Past
-    @JsonFormat( pattern = "yyyy-MM-dd HH:mm")
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date timesheetDate;
+
+    @NotBlank
+    @JsonFormat( pattern = "HH:mm")
     private Date arrivalTime;
 
     @NotBlank
-    @Future
-    @JsonFormat( pattern = "yyyy-MM-dd HH:mm")
+    @JsonFormat( pattern = "HH:mm")
     private Date leaveTime;
 
     @NotBlank

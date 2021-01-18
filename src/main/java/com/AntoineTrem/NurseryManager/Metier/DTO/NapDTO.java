@@ -16,12 +16,16 @@ public class NapDTO {
     private int id;
 
     @NotBlank
-    @JsonFormat( pattern = "yyyy-MM-dd HH:mm")
+    @JsonFormat( pattern = "HH:mm")
     private Date napTimeBegin;
 
     @NotBlank
-    @JsonFormat( pattern = "yyyy-MM-dd HH:mm")
+    @JsonFormat( pattern = "HH:mm")
     private Date napTimeEnd;
+
+    @NotBlank
+    @JsonFormat( pattern = "yyyy-MM-dd")
+    private Date napDate;
 
     private String napObs;
 

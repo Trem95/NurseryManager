@@ -16,6 +16,7 @@ public class SmallNapMapper implements Mapper<SmallNapDTO, Nap> {
         smallNapDTO.setId(nap.getId());
         smallNapDTO.setBabyId(nap.getBaby().getId());
         smallNapDTO.setNapObs(nap.getNapObs());
+        smallNapDTO.setNapDate(nap.getNapDate());
         smallNapDTO.setNapTimeBegin(nap.getNapTimeBegin());
         smallNapDTO.setNapTimeEnd(nap.getNapTimeEnd());
 

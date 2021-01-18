@@ -13,10 +13,12 @@ import java.util.Date;
 public class SmallNapDTO {
 
     private int id;
-    @JsonFormat( pattern = "yyyy-MM-dd HH:mm")
+    @JsonFormat( pattern = "HH:mm")
     private Date napTimeBegin;
-    @JsonFormat( pattern = "yyyy-MM-dd HH:mm")
+    @JsonFormat( pattern = "HH:mm")
     private Date napTimeEnd;
+    @JsonFormat( pattern = "yyyy-MM-dd")
+    private Date napDate;
     private  String napObs;
     private int babyId;
 }

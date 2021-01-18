@@ -11,6 +11,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
@@ -50,19 +53,20 @@ public class ObservationController {
         return ResponseEntity.ok(new ObservationContainer(list,list.size()));
     }
 
-//    @GetMapping("/date")
-//    public ResponseEntity<ObservationContainer> getAllByDate(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") Date date) throws ElementNotFoundException
-//    {
-//        List<ObservationDTO> list = service.getAllByDate(date);
-//        return ResponseEntity.ok(new ObservationContainer(list,list.size()));
-//    }
-//
-//    @GetMapping("/date&baby/{babyId}")
-//    public ResponseEntity<ObservationContainer> getAllByDateAndBabyId(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") Date date,@PathVariable int babyId) throws ElementNotFoundException
-//    {
-//        List<ObservationDTO> list = service.getAllByDateAndBabyId(date,babyId);
-//        return ResponseEntity.ok(new ObservationContainer(list,list.size()));
-//    }
+    @GetMapping("/date")
+    public ResponseEntity<ObservationContainer> getAllByDate(@RequestParam("date")  String date) throws ElementNotFoundException, ParseException {
+        Date dateOk = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+        System.out.println(dateOk);
+        List<ObservationDTO> list = service.getAllByDate(dateOk);
+        return ResponseEntity.ok(new ObservationContainer(list,list.size()));
+    }
+
+    @GetMapping("/date&baby/{babyId}")
+    public ResponseEntity<ObservationContainer> getAllByDateAndBabyId(@RequestParam("date") String date,@PathVariable int babyId) throws ElementNotFoundException, ParseException {
+        Date dateOk = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+        List<ObservationDTO> list = service.getAllByDateAndBabyId(dateOk,babyId);
+        return ResponseEntity.ok(new ObservationContainer(list,list.size()));
+    }
 
     @PutMapping("/update")
     public ResponseEntity<String> update(@RequestBody ObservationDTO toUpdate) throws ElementNotFoundException

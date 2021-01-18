@@ -13,8 +13,10 @@ public class SmallTimesheetDTO {
 
     private int id;
     @JsonFormat( pattern = "yyyy-MM-dd HH:mm")
-    private Date arrivalTime;
+    private Date timesheetDate;
     @JsonFormat( pattern = "yyyy-MM-dd HH:mm")
+    private Date arrivalTime;
+    @JsonFormat( pattern = "HH:mm")
     private Date leaveTime;
     private int babyId;
 

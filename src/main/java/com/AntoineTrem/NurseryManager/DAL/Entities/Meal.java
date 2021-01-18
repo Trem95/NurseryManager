@@ -30,6 +30,11 @@ public class Meal {
     private String mealObs;
 
     @Column(name = "meal_date", nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date mealDate;
+
+    @Column(name = "meal_time", nullable = false)
+    @Temporal(TemporalType.TIME)
+    private Date mealTime;
 
 }

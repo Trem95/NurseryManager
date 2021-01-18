@@ -30,4 +30,7 @@ public class MealDTO {
     @JsonFormat( pattern = "yyyy-MM-dd HH:mm")
     private Date mealDate;
 
+    @JsonFormat( pattern = "HH:mm")
+    private Date mealTime;
+
 }

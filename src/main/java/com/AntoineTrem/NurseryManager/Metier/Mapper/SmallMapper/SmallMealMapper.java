@@ -19,6 +19,7 @@ public class SmallMealMapper implements Mapper<SmallMealDTO, Meal> {
         smallMealDTO.setTypeMeal(meal.getTypeMeal());
         smallMealDTO.setMealObs(meal.getMealObs());
         smallMealDTO.setMealDate(meal.getMealDate());
+        smallMealDTO.setMealTime(meal.getMealTime());
 
         return smallMealDTO;
     }

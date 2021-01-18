@@ -25,6 +25,7 @@ public class MealMapper implements Mapper<MealDTO, Meal> {
         mealDTO.setMealObs(meal.getMealObs());
         mealDTO.setTypeMeal(meal.getTypeMeal());
         mealDTO.setMealDate(meal.getMealDate());
+        mealDTO.setMealTime(meal.getMealTime());
 
         return mealDTO;
     }
@@ -40,6 +41,7 @@ public class MealMapper implements Mapper<MealDTO, Meal> {
         meal.setMealObs(mealDTO.getMealObs());
         meal.setTypeMeal(mealDTO.getTypeMeal());
         meal.setMealDate(mealDTO.getMealDate());
+        meal.setMealTime(mealDTO.getMealTime());
 
         return meal;
 

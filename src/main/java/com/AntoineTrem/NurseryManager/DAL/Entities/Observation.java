@@ -1,13 +1,12 @@
 package com.AntoineTrem.NurseryManager.DAL.Entities;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -32,5 +31,10 @@ public class Observation {
     private Baby baby;
 
     @Column( name = "observation_date", nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date observationDate;
+
+    @Column(name = "observation_time", nullable = false)
+    @Temporal(TemporalType.TIME)
+    private Date observationTime;
 }

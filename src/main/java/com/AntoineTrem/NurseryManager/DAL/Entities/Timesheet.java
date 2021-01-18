@@ -19,10 +19,16 @@ public class Timesheet {
     @Column(name ="timesheet_id", nullable = false)
     private int id;
 
+    @Column(name = "timesheet_date", nullable = false)
+    @Temporal(TemporalType.DATE)
+    private Date timesheetDate;
+
     @Column( name = "arrival_time", nullable = false)
+    @Temporal(TemporalType.TIME)
     private Date arrivalTime;
 
     @Column( name ="leave_time", nullable = false)
+    @Temporal(TemporalType.TIME)
     private Date leaveTime;
 
     @ManyToOne

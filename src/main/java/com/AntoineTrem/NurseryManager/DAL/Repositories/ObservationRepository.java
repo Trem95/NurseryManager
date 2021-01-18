@@ -9,10 +9,10 @@ import java.util.List;
 
 public interface ObservationRepository extends JpaRepository<Observation,Integer> {
 
-    public List<Observation> findAllByBabyId(int babyId);
+     List<Observation> findAllByBabyId(int babyId);
 
-//    public List<Observation> findAllByObservationDate(Date date);
-//
-//    public List<Observation> findAllByObservationDateAndBaby_Id(Date date, int babyId);
+     List<Observation> findAllByObservationDate(Date date);
+
+     List<Observation> findAllByObservationDateAndBaby_Id(Date date, int babyId);
 
 }

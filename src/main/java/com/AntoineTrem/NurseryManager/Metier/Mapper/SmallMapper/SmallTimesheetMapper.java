@@ -15,6 +15,7 @@ public class SmallTimesheetMapper implements Mapper<SmallTimesheetDTO, Timesheet
 
         smallTimesheetDTO.setId(timesheet.getId());
         smallTimesheetDTO.setBabyId(timesheet.getBaby().getId());
+        smallTimesheetDTO.setTimesheetDate(timesheet.getTimesheetDate());
         smallTimesheetDTO.setArrivalTime(timesheet.getArrivalTime());
         smallTimesheetDTO.setLeaveTime(timesheet.getLeaveTime());
 

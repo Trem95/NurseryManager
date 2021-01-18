@@ -18,6 +18,7 @@ public class SmallObservationMapper implements Mapper<SmallObservationDTO, Obser
         smallObservationDTO.setObservation(observation.getObservation());
         smallObservationDTO.setObsAuthor(observation.getObsAuthor());
         smallObservationDTO.setObservationDate(observation.getObservationDate());
+        smallObservationDTO.setObservationTime(observation.getObservationTime());
 
         return smallObservationDTO;
     }

@@ -71,17 +71,17 @@ public class ObservationService implements CrudService<ObservationDTO, Integer>{
         repo.deleteById(toDelete);
     }
 
-//    @Transactional
-//    public List<ObservationDTO> getAllByDate(Date date) throws ElementNotFoundException
-//    {
-//        List<Observation> observations = repo.findAllByObservationDate(date);
-//        return observations.stream().map(mapper::toDTO).collect(Collectors.toList());
-//    }
-//
-//    @Transactional
-//    public List<ObservationDTO> getAllByDateAndBabyId(Date date, int babyId) throws ElementNotFoundException
-//    {
-//        List<Observation> observations = repo.findAllByObservationDateAndBaby_Id(date,babyId);
-//        return observations.stream().map(mapper::toDTO).collect(Collectors.toList());
-//    }
+    @Transactional
+    public List<ObservationDTO> getAllByDate(Date date) throws ElementNotFoundException
+    {
+        List<Observation> observations = repo.findAllByObservationDate(date);
+        return observations.stream().map(mapper::toDTO).collect(Collectors.toList());
+    }
+
+    @Transactional
+    public List<ObservationDTO> getAllByDateAndBabyId(Date date, int babyId) throws ElementNotFoundException
+    {
+        List<Observation> observations = repo.findAllByObservationDateAndBaby_Id(date,babyId);
+        return observations.stream().map(mapper::toDTO).collect(Collectors.toList());
+    }
 }

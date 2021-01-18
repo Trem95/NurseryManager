@@ -26,6 +26,10 @@ public class ObservationDTO {
     private SmallBabyDTO baby;
 
     @NotBlank
-    @JsonFormat( pattern = "yyyy-MM-dd HH:mm")
+    @JsonFormat( pattern = "yyyy-MM-dd")
     private Date observationDate;
+
+    @NotBlank
+    @JsonFormat( pattern = "HH:mm")
+    private Date observationTime;
 }

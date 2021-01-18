@@ -15,7 +15,9 @@ public class SmallMealDTO {
     private int babyId;
     private String typeMeal;
     private String mealObs;
-    @JsonFormat( pattern = "yyyy-MM-dd HH:mm")
+    @JsonFormat( pattern = "yyyy-MM-dd")
     private Date mealDate;
+    @JsonFormat( pattern = "HH :mm")
+    private Date mealTime;
 
 }

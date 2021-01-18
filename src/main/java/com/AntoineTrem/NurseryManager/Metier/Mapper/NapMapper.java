@@ -22,6 +22,7 @@ public class NapMapper implements Mapper<NapDTO, Nap> {
 
         napDTO.setId(nap.getId());
         napDTO.setBaby(babyMapper.toDTO(nap.getBaby()));
+        napDTO.setNapDate(nap.getNapDate());
         napDTO.setNapTimeBegin(nap.getNapTimeBegin());
         napDTO.setNapTimeEnd(nap.getNapTimeEnd());
         napDTO.setNapObs(nap.getNapObs());
@@ -38,8 +39,9 @@ public class NapMapper implements Mapper<NapDTO, Nap> {
 
         nap.setId(napDTO.getId());
         nap.setBaby(babyMapper.toEntity(napDTO.getBaby()));
-        nap.setNapTimeEnd((Date) napDTO.getNapTimeEnd());
-        nap.setNapTimeEnd((Date) napDTO.getNapTimeBegin());
+        nap.setNapDate(napDTO.getNapDate());
+        nap.setNapTimeEnd(napDTO.getNapTimeEnd());
+        nap.setNapTimeEnd(napDTO.getNapTimeBegin());
         nap.setNapObs(napDTO.getNapObs());
 
         return nap;
