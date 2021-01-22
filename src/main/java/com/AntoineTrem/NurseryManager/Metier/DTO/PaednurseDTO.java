@@ -24,5 +24,5 @@ public class PaednurseDTO {
 
     @NotBlank
     @Size(max =50)
-    private byte[] pwd;
+    private String pwd;
 }

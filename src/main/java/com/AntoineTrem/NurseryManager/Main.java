@@ -16,6 +16,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
@@ -24,7 +26,7 @@ import java.util.List;
 @SpringBootApplication
 public class Main {
 
-    public static void main(String[] args) throws ElementAlreadyExistException, ElementNotFoundException {
+    public static void main(String[] args) throws ElementAlreadyExistException, ElementNotFoundException, NoSuchAlgorithmException {
         ApplicationContext ctx =  SpringApplication.run(NurseryManagerApplication.class, args);
 
 //        BabyRepository babyRepo = ctx.getBean(BabyRepository.class);
@@ -32,6 +34,7 @@ public class Main {
 //
        // ObservationRepository obsRepo = ctx.getBean(ObservationRepository.class);
        // ObservationService obsService = ctx.getBean(ObservationService.class);
+
 
     }
 }

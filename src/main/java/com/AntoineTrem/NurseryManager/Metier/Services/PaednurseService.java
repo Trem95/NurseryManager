@@ -28,6 +28,7 @@ public class PaednurseService implements CrudService<PaednurseDTO, Integer>{
     public void create(PaednurseDTO toCreate) throws ElementAlreadyExistException {
         if (repo.existsById(toCreate.getId()))
             throw new PaednurseAlreadyExistException(toCreate.getId());
+
         repo.save(mapper.toEntity(toCreate));
     }
 

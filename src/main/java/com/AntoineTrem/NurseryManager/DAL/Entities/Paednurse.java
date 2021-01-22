@@ -28,6 +28,6 @@ public class Paednurse {
 
     @Column( name ="pwd", nullable = false, columnDefinition = "blob")
     @Size( max = 50)
-    private byte[] pwd;
+    private String pwd;
 
 }

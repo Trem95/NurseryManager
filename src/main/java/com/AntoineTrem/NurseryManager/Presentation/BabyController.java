@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/baby")
+@CrossOrigin("*")
 public class BabyController {
 
     private BabyService service;

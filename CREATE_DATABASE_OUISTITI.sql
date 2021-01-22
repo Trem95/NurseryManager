@@ -56,6 +56,6 @@ CREATE TABLE paednurse (
                            paednurse_id INT AUTO_INCREMENT,
                            name VARCHAR(50) NOT NULL,
                            login VARCHAR(50) NOT NULL,
-                           pwd BLOB NOT NULL,
+                           pwd VARCHAR(100) NOT NULL,
                            CONSTRAINT PK_paednurse_id PRIMARY KEY (paednurse_id)
 );
