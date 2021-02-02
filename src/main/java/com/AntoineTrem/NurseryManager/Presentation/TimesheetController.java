@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/timesheet")
+@CrossOrigin("*")
 public class TimesheetController {
 
     private TimesheetService service;
@@ -40,7 +41,7 @@ public class TimesheetController {
     }
 
     @GetMapping("/baby/{id}")
-    public ResponseEntity<TimesheetContainer> getAllByBaby(int id) throws ElementNotFoundException
+    public ResponseEntity<TimesheetContainer> getAllByBaby(@PathVariable int id) throws ElementNotFoundException
     {
         List<TimesheetDTO> list = service.getAllByBaby(id);
         return ResponseEntity.ok(new TimesheetContainer(list,list.size()));

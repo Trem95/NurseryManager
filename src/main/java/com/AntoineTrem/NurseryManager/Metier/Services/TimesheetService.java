@@ -52,8 +52,10 @@ public class TimesheetService implements CrudService<TimesheetDTO, Integer>{
     @Transactional
     public List<TimesheetDTO> getAllByBaby(int babyId)
     {
-        List<Timesheet> timesheets = repo.findAllByBabyId(babyId);
-        return timesheets.stream().map(mapper::toDTO).collect(Collectors.toList());
+        return repo.findAllByBabyId(babyId)
+                .stream()
+                .map(mapper::toDTO)
+                .collect(Collectors.toList());
     }
 
     @Override

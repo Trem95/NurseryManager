@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/nap")
+@CrossOrigin("*")
 public class NapController {
 
     private NapService service;

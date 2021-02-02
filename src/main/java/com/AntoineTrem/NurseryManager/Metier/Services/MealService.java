@@ -7,7 +7,9 @@ import com.AntoineTrem.NurseryManager.Exception.AlreadyExistException.MealAlread
 import com.AntoineTrem.NurseryManager.Exception.NotFoundException.ElementNotFoundException;
 import com.AntoineTrem.NurseryManager.Exception.NotFoundException.MealNotFoundException;
 import com.AntoineTrem.NurseryManager.Metier.DTO.MealDTO;
+import com.AntoineTrem.NurseryManager.Metier.DTO.SmallDTO.SmallMealDTO;
 import com.AntoineTrem.NurseryManager.Metier.Mapper.MealMapper;
+import com.AntoineTrem.NurseryManager.Metier.Mapper.SmallMapper.SmallMealMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,9 @@ public class MealService implements CrudService<MealDTO, Integer>{
 
     @Autowired
     private MealMapper mapper;
+
+    @Autowired
+    private SmallMealMapper smallMapper;
 
     @Autowired
     private MealRepository repo;
@@ -49,10 +54,12 @@ public class MealService implements CrudService<MealDTO, Integer>{
     }
 
     @Transactional
-    public List<MealDTO> getAllByBaby(int babyId)
+    public List<MealDTO> getAllByBaby(int babyId) throws ElementNotFoundException
     {
-        List<Meal> meals = repo.findAllByBabyId(babyId);
-        return meals.stream().map(mapper::toDTO).collect(Collectors.toList());
+        return repo.findAllByBabyId(babyId)
+                .stream()
+                .map(mapper::toDTO)
+                .collect(Collectors.toList());
     }
 
     @Override

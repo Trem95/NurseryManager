@@ -4,6 +4,7 @@ import com.AntoineTrem.NurseryManager.Exception.AlreadyExistException.ElementAlr
 import com.AntoineTrem.NurseryManager.Exception.NotFoundException.ElementNotFoundException;
 import com.AntoineTrem.NurseryManager.Metier.DTO.Container.MealContainer;
 import com.AntoineTrem.NurseryManager.Metier.DTO.MealDTO;
+import com.AntoineTrem.NurseryManager.Metier.DTO.SmallDTO.SmallMealDTO;
 import com.AntoineTrem.NurseryManager.Metier.Services.MealService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/meal")
+@CrossOrigin("*")
 public class MealController {
 
     private MealService service;

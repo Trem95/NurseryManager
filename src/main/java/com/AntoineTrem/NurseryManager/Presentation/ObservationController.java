@@ -20,6 +20,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/observation")
+@CrossOrigin("*")
 public class ObservationController {
 
     private ObservationService service;

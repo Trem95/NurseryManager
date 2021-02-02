@@ -53,8 +53,10 @@ public class ObservationService implements CrudService<ObservationDTO, Integer>{
     @Transactional
     public List<ObservationDTO> getAllByBaby(int babyId)
     {
-        List<Observation> observations =  repo.findAllByBabyId(babyId);
-        return observations.stream().map(mapper::toDTO).collect(Collectors.toList());
+        return repo.findAllByBabyId(babyId)
+                .stream()
+                .map(mapper::toDTO)
+                .collect(Collectors.toList());
     }
 
     @Override

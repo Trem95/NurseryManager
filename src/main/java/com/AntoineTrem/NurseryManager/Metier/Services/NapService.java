@@ -51,8 +51,10 @@ public class NapService implements CrudService<NapDTO, Integer>{
     @Transactional
     public List<NapDTO> getAllByBaby(int babyId)
     {
-        List<Nap> naps = repo.findAllByBabyId(babyId);
-        return naps.stream().map(mapper::toDTO).collect(Collectors.toList());
+        return repo.findAllByBabyId(babyId)
+                .stream()
+                .map(mapper::toDTO)
+                .collect(Collectors.toList());
     }
 
     @Override
