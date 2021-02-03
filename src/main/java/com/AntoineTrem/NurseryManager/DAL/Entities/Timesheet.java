@@ -27,7 +27,7 @@ public class Timesheet {
     @Temporal(TemporalType.TIME)
     private Date arrivalTime;
 
-    @Column( name ="leave_time", nullable = false)
+    @Column( name ="leave_time")
     @Temporal(TemporalType.TIME)
     private Date leaveTime;
 

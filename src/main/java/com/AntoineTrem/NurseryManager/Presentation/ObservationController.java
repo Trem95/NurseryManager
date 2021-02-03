@@ -31,6 +31,7 @@ public class ObservationController {
     @ResponseStatus(HttpStatus.CREATED)
     public void create (@RequestBody ObservationDTO toCreate) throws ElementAlreadyExistException
     {
+        System.out.println(toCreate);
         service.create(toCreate);
     }
 

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -12,6 +13,7 @@ import java.util.Date;
 
 @Getter @Setter
 @NoArgsConstructor
+@ToString
 public class ObservationDTO {
 
     private int id;

@@ -21,7 +21,7 @@ CREATE TABLE timesheet (
                            timesheet_id INT AUTO_INCREMENT,
                            timesheet_date DATE NOT NULL,
                            arrival_time TIME NOT NULL,
-                           leave_time TIME NOT NULL,
+                           leave_time TIME,
                            baby_id INT NOT NULL,
                            CONSTRAINT PK_timesheet_id PRIMARY KEY (timesheet_id),
                            CONSTRAINT FK_timesheet_baby_id FOREIGN KEY (baby_id)
