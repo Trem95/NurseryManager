@@ -19,7 +19,7 @@ public class NapDTO {
     @JsonFormat( pattern = "HH:mm")
     private Date napTimeBegin;
 
-    @NotBlank
+
     @JsonFormat( pattern = "HH:mm")
     private Date napTimeEnd;
 

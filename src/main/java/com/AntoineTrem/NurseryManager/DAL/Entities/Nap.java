@@ -25,7 +25,7 @@ public class Nap {
     @Temporal(TemporalType.TIME)
     private Date napTimeBegin;
 
-    @Column( name = "nap_time_end", nullable = false)
+    @Column( name = "nap_time_end")
     @Temporal(TemporalType.TIME)
     private Date napTimeEnd;
 
